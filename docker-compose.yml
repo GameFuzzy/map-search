@@ -1,0 +1,33 @@
+services:
+
+  user-db:
+    image: postgis/postgis:17-3.5
+    env_file: ./env/db.env
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    image: gamefuzzy/map-search
+    env_file:
+      - ./env/db.env
+      - ./env/django.env
+    build: src
+    ports:
+      - "8000:8000"
+    depends_on:
+      user-db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /usr/src/app
+          ignore:
+            - ./src/requirements.txt
+        - action: rebuild
+          path: ./src/requirements.txt
