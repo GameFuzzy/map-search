@@ -39,9 +39,11 @@ async def view_all_users(request):
 
 # Endpoint for viewing all users within a given bounding box
 @router.get("/view-within-bbox", response=list[UserOut])
-async def view_users_within_bounding_box(request, lon_min, lat_min, lon_max, lat_max):
+async def view_users_within_bounding_box(request, longitude_min, latitude_min,
+                                         longitude_max, latitude_max):
 
-    bbox = (lon_min, lat_min, lon_max, lat_max)
+    bbox = (longitude_min, latitude_min,
+                                         longitude_max, latitude_max)
     geom = Polygon.from_bbox(bbox)
 
     return [user async for user in User.objects.filter(geo_pos__within=geom)]
