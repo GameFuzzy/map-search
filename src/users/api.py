@@ -17,13 +17,14 @@ class UserOut(ModelSchema):
 
 # Schema for creating a user
 class UserIn(Schema):
-    lon: float # Longitude
-    lat: float # Latitude
+    longitude: float # Longitude
+    latitude: float # Latitude
 
 # Endpoint for creating a user
 @router.post("/create")
 async def create_user(request, data: UserIn):
-    user = await User.objects.acreate(geo_pos=Point(data.lon, data.lat))
+    user = await User.objects.acreate(geo_pos=Point(data.longitude,
+                                                    data.latitude))
     return {"id": user.id}
     
 # Endpoint for deleting a user
