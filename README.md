@@ -19,7 +19,7 @@
 
 Either:
 
-`docker compose exec user-db python manage.py migrate`
+`docker compose exec web python manage.py migrate`
 
 to start off with an empty user database
 
