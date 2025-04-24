@@ -9,8 +9,8 @@
 ### Setting up the docker stack
 
 1. `cd /path/to/project`
-2. `cp sample/env env`
-3. Change the credentials in `env/db.env` and `env/django.env` to something
+2. `cp sample/env .env`
+3. Change the credentials in `.env/db.env` and `.env/django.env` to something
    secure
 4. `docker compose up -d` (add `--build` if you want to build the image from
    source)
@@ -29,7 +29,7 @@ or
 
 to restore a sample database
 
-> **_NOTE:_**  If you have changed `DATABASE_DB` and/or `DATABASE_USER` in `env/db.env` then the above command will have to be modified to reflect that
+> **_NOTE:_**  If you have changed `DATABASE_DB` and/or `DATABASE_USER` in `.env/db.env` then the above command will have to be modified to reflect that
 
 
 ## Usage
