@@ -35,3 +35,7 @@ to restore a sample database
 ## Usage
 
 While the docker stack is running http://localhost:8000/api/docs can be used to experiment with the API
+
+## Verify GameFuzzy/map-search build provenance
+
+`gh attestation verify oci://index.docker.io/gamefuzzy/map-search -R GameFuzzy/map-search`
