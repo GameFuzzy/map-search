@@ -40,8 +40,10 @@ async def view_all_users(request):
 
 # Endpoint for viewing all users within a given bounding box
 @router.get("/view-within-bbox", response=list[UserOut])
-async def view_users_within_bounding_box(request, longitude_min, latitude_min,
-                                         longitude_max, latitude_max):
+async def view_users_within_bounding_box(request, longitude_min: float,
+                                         latitude_min: float,
+                                         longitude_max: float, latitude_max:
+                                         float):
 
     bbox = (longitude_min, latitude_min,
                                          longitude_max, latitude_max)
