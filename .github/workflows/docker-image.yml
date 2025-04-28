@@ -60,6 +60,6 @@ jobs:
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2
         with:
-          subject-name: docker.index.io/gamefuzzy/map-search
+          subject-name: index.docker.io/gamefuzzy/map-search
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true

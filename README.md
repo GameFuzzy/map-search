@@ -59,5 +59,5 @@ $ docker compose run --rm --build web python manage.py test
 ## Verify GameFuzzy/map-search image build provenance
 
 ```
-$ gh attestation verify oci://docker.index.io/gamefuzzy/map-search -R GameFuzzy/map-search
+$ gh attestation verify oci://index.docker.io/gamefuzzy/map-search -R GameFuzzy/map-search
 ```
