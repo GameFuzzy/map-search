@@ -50,6 +50,12 @@ to restore the included sample database
 
 Navigate to http://localhost:8000/api/docs to experiment with the API
 
+## Testing
+
+```
+$ docker compose run --rm --build web python manage.py test
+```
+
 ## Verify GameFuzzy/map-search image build provenance
 
 ```
