@@ -17,6 +17,8 @@ services:
       - ./.env/db.env
       - ./.env/django.env
     build: src
+    volumes:
+      - ./web/output/:/usr/src/app/output/
     ports:
       - "8000:8000"
     depends_on:

@@ -1,4 +1,7 @@
 # map-search
+[![codecov](https://codecov.io/gh/GameFuzzy/map-search/graph/badge.svg?token=KjptTS4I7H)](https://codecov.io/gh/GameFuzzy/map-search)
+[![Tests](https://github.com/GameFuzzy/map-search/actions/workflows/test.yml/badge.svg)](https://github.com/GameFuzzy/map-search/actions/workflows/test.yml)
+[![Publish Docker image](https://github.com/GameFuzzy/map-search/actions/workflows/docker-image.yml/badge.svg)](https://github.com/GameFuzzy/map-search/actions/workflows/docker-image.yml)
 
 ## Dependencies
 
@@ -6,7 +9,7 @@
 
 ## Initial setup
 
-### Setting up the Docker stack
+### Setting up the Docker Compose environment
 
 ```
 $ cd /path/to/project
@@ -45,9 +48,9 @@ to restore the included sample database
 
 ## Usage
 
-While the docker stack is running http://localhost:8000/api/docs can be used to experiment with the API
+Navigate to http://localhost:8000/api/docs to experiment with the API
 
-## Verify GameFuzzy/map-search build provenance
+## Verify GameFuzzy/map-search image build provenance
 
 ```
 $ gh attestation verify oci://index.docker.io/gamefuzzy/map-search -R GameFuzzy/map-search
