@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Run Tests
       run: |
-        cp sample/env .env
+        cp -r sample/env .env
         docker compose run --rm --build web sh -c "pip install coverage;
           coverage run --data-file=./output/.coverage --source='.' --omit=manage.py,asgi.py manage.py test"
     - name: Upload results to Codecov

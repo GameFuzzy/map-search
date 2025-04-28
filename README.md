@@ -15,7 +15,7 @@
 $ cd /path/to/project
 ```
 ```
-$ cp sample/env .env
+$ cp -r sample/env .env
 ```
 Change the credentials in `.env/db.env` and `.env/django.env` to something
    secure
