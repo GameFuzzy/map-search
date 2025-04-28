@@ -2,6 +2,7 @@
 [![codecov](https://codecov.io/gh/GameFuzzy/map-search/graph/badge.svg?token=KjptTS4I7H)](https://codecov.io/gh/GameFuzzy/map-search)
 [![Tests](https://github.com/GameFuzzy/map-search/actions/workflows/test.yml/badge.svg)](https://github.com/GameFuzzy/map-search/actions/workflows/test.yml)
 [![Publish Docker image](https://github.com/GameFuzzy/map-search/actions/workflows/docker-image.yml/badge.svg)](https://github.com/GameFuzzy/map-search/actions/workflows/docker-image.yml)
+[![CodeQL](https://github.com/GameFuzzy/map-search/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/GameFuzzy/map-search/actions/workflows/github-code-scanning/codeql)
 
 ## Dependencies
 
