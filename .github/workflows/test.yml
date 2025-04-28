@@ -21,7 +21,7 @@ jobs:
       run: |
         cp -r sample/env .env
         docker compose run --rm --build web sh -c "pip install coverage;
-          coverage run --source='.' --omit=manage.py,asgi.py manage.py test;
+          coverage run --source='.' --omit=manage.py,wsgi.py,asgi.py manage.py test;
           coverage xml -o ./output/coverage.xml"
     - name: Upload results to Codecov
       uses: codecov/codecov-action@v5
