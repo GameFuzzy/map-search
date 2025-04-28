@@ -12,8 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        python-version: ${{ matrix.python-version }}
     - name: Log in to Docker Hub
       uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
       with:
@@ -23,7 +21,8 @@ jobs:
       run: |
         cp -r sample/env .env
         docker compose run --rm --build web sh -c "pip install coverage;
-          coverage run --data-file=./output/.coverage --source='.' --omit=manage.py,asgi.py manage.py test"
+          coverage run --source='.' --omit=manage.py,asgi.py manage.py test;
+          coverage xml -o ./output/coverage.xml"
     - name: Upload results to Codecov
       uses: codecov/codecov-action@v5
       with:

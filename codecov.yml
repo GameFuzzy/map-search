@@ -1,2 +1,2 @@
 fixes:
-  - "/usr/src/app/::src/"
+  - "::src/"
