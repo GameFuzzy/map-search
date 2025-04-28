@@ -4,7 +4,7 @@ services:
     image: postgis/postgis:17-3.5
     env_file: ./.env/db.env
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -24,10 +24,13 @@ services:
         condition: service_healthy
     develop:
       watch:
+        - action: rebuild
+          path: ./src/Dockerfile
+        - action: rebuild
+          path: ./src/requirements.txt
         - action: sync
           path: ./src
           target: /usr/src/app
-          ignore:
-            - ./src/requirements.txt
-        - action: rebuild
-          path: ./src/requirements.txt
+
+volumes:
+  db-data:
