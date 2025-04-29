@@ -1,5 +1,4 @@
 from django.contrib.gis.geos.point import Point
-from django.core.serializers import serialize
 from django.test import TestCase
 from ninja.testing import TestAsyncClient
 
