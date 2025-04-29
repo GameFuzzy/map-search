@@ -39,7 +39,7 @@ to start off with an empty user database
 or
 
 ```
-$ cat sample/db.sql | docker compose exec -T user-db psql -U postgres -d postgres
+$ cat sample/db.sql | docker compose exec -T db psql -U postgres -d postgres
 ```
 
 to restore the included sample database

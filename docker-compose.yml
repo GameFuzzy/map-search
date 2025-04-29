@@ -1,6 +1,6 @@
 services:
 
-  user-db:
+  db:
     image: postgis/postgis:17-3.5
     env_file: ./.env/db.env
     volumes:
@@ -22,7 +22,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      user-db:
+      db:
         condition: service_healthy
     develop:
       watch:
